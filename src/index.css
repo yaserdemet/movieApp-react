@@ -86,8 +86,12 @@ body {
 
 .navbar {
   padding: 1rem 3rem;
-  background-color: #0d47a1 !important;
+  /* background-color: #0d47a1 !important; */
+  background-color:  #F29F05 !important;
+
 }
+
+
 
 .form-image {
   min-width: 800px;

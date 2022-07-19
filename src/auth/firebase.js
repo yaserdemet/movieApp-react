@@ -1,15 +1,17 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import {createUserWithEmailAndPassword} from "firebase/auth";
+
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://firebase.google.com/docs/web/learn-more#config-object
 const firebaseConfig = {
-  apiKey: "AIzaSyBCS39RLJYE09EU0XwghcsQLjkxVLeuYj4",
-  authDomain: "movieappreact-6b07b.firebaseapp.com",
-  projectId: "movieappreact-6b07b",
-  storageBucket: "movieappreact-6b07b.appspot.com",
-  messagingSenderId: "272107674981",
-  appId: "1:272107674981:web:3e96e06110ed4f8ae7d58c"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
@@ -18,3 +20,19 @@ const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
+
+
+
+export  const createUser = async (email, password,navigate) => {
+//? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu
+
+  try {
+  let userCredential =  await createUserWithEmailAndPassword(auth, email, password)
+  navigate("/");
+  console.log(userCredential);
+  } catch (error) {
+    console.log(error);
+  }
+
+}
+

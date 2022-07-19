@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { createUser } from "../auth/firebase";
 
 const Login = () => {
   const [email, setEmail] = useState();
@@ -6,6 +7,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
   };
   return (
     <div className="d-flex justify-content-center">
@@ -44,7 +46,11 @@ const Login = () => {
 
           <div className="link">Forgot Password</div>
 
-          <input type="submit" className="btn form-control btn-primary" value="Login" />
+          <input
+            type="submit"
+            className="btn form-control btn-primary"
+            value="Login"
+          />
         </form>
         <button className="btn btn-primary form-control">
           Contiune with Google

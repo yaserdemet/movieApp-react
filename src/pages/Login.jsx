@@ -1,12 +1,16 @@
 import React, { useState } from "react";
-import { createUser } from "../auth/firebase";
+import {  signIn } from "../auth/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    signIn(email.password,navigate);
+    navigate("/");
     
   };
   return (

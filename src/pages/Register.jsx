@@ -1,7 +1,9 @@
 import React from "react";
+import { ToastContainer, toast } from 'react-toastify';
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { createUser } from "../auth/firebase";
+
 
 const Register = () => {
   const navigate = useNavigate();
@@ -12,11 +14,17 @@ const Register = () => {
   const [password, setPassword] = useState();
 
   const handleSubmit = (e) => {
+   
     e.preventDefault();
     console.log(firstName, lastName, email, password);
+   
     createUser(email, password, navigate);
     // ! navigate("/")
     // ? navigate hookunu burada bu şekilde kullanamayız. hatalı bir register (önceden register olmus aynı ad vs) oldugunda bile home götürür. Bunu engellemek için firebase gönderip function içinde try blogunda (yani basarılı olursa kullandık.)
+    toast.info(`Welcome on board ${firstName}.` , 
+    {
+      theme : "dark"
+    })
   };
 
   return (
@@ -27,7 +35,7 @@ const Register = () => {
 
       <div className="register-form">
         <h1 className="form-title display-3">Register</h1>
-        <form id="register" action="" onSubmit={handleSubmit}>
+        <form id="register" action="" onSubmit={handleSubmit} >
           <div className="mb-3">
             <label htmlFor="firstName" className="form-label">
               {" "}

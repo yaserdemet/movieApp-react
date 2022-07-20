@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import {  signIn } from "../auth/firebase";
+import { signIn } from "../auth/firebase";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -8,10 +9,13 @@ const Login = () => {
   const [password, setPassword] = useState();
 
   const handleSubmit = (e) => {
+    toast.success("You logged in", {
+      theme: "dark",
+      icon: "🚀",
+    });
     e.preventDefault();
-    signIn(email,password,navigate);
+    signIn(email, password, navigate);
     navigate("/");
-    
   };
   return (
     <div className="d-flex justify-content-center">

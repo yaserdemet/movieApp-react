@@ -15,6 +15,8 @@ const Register = () => {
     e.preventDefault();
     console.log(firstName, lastName, email, password);
     createUser(email, password, navigate);
+    // ! navigate("/")
+    // ? navigate hookunu burada bu şekilde kullanamayız. hatalı bir register (önceden register olmus aynı ad vs) oldugunda bile home götürür. Bunu engellemek için firebase gönderip function içinde try blogunda (yani basarılı olursa kullandık.)
   };
 
   return (

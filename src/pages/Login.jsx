@@ -9,7 +9,7 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signIn(email.password,navigate);
+    signIn(email,password,navigate);
     navigate("/");
     
   };

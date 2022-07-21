@@ -6,9 +6,9 @@ import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 const MovieDetail = () => {
-  const { setVoteClass } = useParams();
-  console.log(setVoteClass);
-  // ? setVoteClassı navigatenin içine state olarak verip burada useParams ile aldım
+  // const { setVoteClass } = useParams();
+  // console.log(setVoteClass);
+  // // ? setVoteClassı navigatenin içine state olarak verip burada useParams ile aldım
 
   // const {setVoteClass} = useContext(AuthContext);
   // ! setVoteClass functionını globalState e atıp ordanda çekilebilir
@@ -71,7 +71,7 @@ const MovieDetail = () => {
                 {"Release Date : " + release_date}
               </li>
               <li className="list-group-item">
-                <span className={`tag ${setVoteClass(vote_average)}`}>
+                <span >
                   {"Rate : " + vote_average}
                 </span>
               </li>

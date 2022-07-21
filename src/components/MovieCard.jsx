@@ -27,7 +27,7 @@ const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
     <div
       className="movie bg-dark "
       onClick={() => {
-        navigate('/details/' + id, {state : setVoteClass} );
+        navigate('/details/' + id );
   // ! dive click oldugunda details sayfasina gidiyor. id yi useParams ile aliyoruz.
         !currentUser && toastWarnNotify('Please log in to see detail');
       }}

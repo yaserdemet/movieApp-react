@@ -27,5 +27,6 @@ export const toastErrorNotify = (msg) => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
+    
   });
 };

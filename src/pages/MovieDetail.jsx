@@ -1,11 +1,21 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import VideoSection from '../components/VideoSection';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import VideoSection from "../components/VideoSection";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const MovieDetail = () => {
+  const { setVoteClass } = useParams();
+  console.log(setVoteClass);
+  // ? setVoteClassı navigatenin içine state olarak verip burada useParams ile aldım
+
+  // const {setVoteClass} = useContext(AuthContext);
+  // ! setVoteClass functionını globalState e atıp ordanda çekilebilir
+  // console.log(setVoteClass);
+
   const { id } = useParams();
-  const [movieDetails, setMovieDetails] = useState('');
+  const [movieDetails, setMovieDetails] = useState("");
   const [videoKey, setVideoKey] = useState();
 
   const {
@@ -21,9 +31,9 @@ const MovieDetail = () => {
   // const API_KEY = "d6278b3dc3e6f8f8376a89851c3f8c8f";
   const movieDetailBaseUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`;
   const videoUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`;
-  const baseImageUrl = 'https://image.tmdb.org/t/p/w1280';
+  const baseImageUrl = "https://image.tmdb.org/t/p/w1280";
   const defaultImage =
-    'https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80';
+    "https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80";
 
   useEffect(() => {
     axios
@@ -40,11 +50,13 @@ const MovieDetail = () => {
     <div className="container py-5">
       <h1 className="text-center">{title}</h1>
       {videoKey && <VideoSection videoKey={videoKey} />}
+      {/* //* videosectiondan videoları çekiyourz burada ise video keyi prop olarak gönderiyoruz. */}
       <div className="card mb-3">
         <div className="row g-0">
           <div className="col-md-4">
             <img
               src={poster_path ? baseImageUrl + poster_path : defaultImage}
+              //* poster path varsa göster yoksa default fotoğrafı göster.
               className="img-fluid rounded-start"
               alt="..."
             />
@@ -56,14 +68,18 @@ const MovieDetail = () => {
             </div>
             <ul className="list-group ">
               <li className="list-group-item">
-                {'Release Date : ' + release_date}
-              </li>
-              <li className="list-group-item">{'Rate : ' + vote_average}</li>
-              <li className="list-group-item">
-                {'Total Vote : ' + vote_count}
+                {"Release Date : " + release_date}
               </li>
               <li className="list-group-item">
-                <Link to={-1} className="card-link">
+                <span className={`tag ${setVoteClass(vote_average)}`}>
+                  {"Rate : " + vote_average}
+                </span>
+              </li>
+              <li className="list-group-item">
+                {"Total Vote : " + vote_count}
+              </li>
+              <li className="list-group-item">
+                <Link to={-1} className="card-link btn btn-dark">
                   Go Back
                 </Link>
               </li>

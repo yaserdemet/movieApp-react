@@ -16,12 +16,12 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid">
           <Link to="/" className="navbar-brand text-white">
-            <h4>React Movie App</h4>
+            <h4 className='text-dark'>React Movie App</h4>
           </Link>
           <div className="d-flex text-white align-items-center ">
             {currentUser ? (
               <>
-                <h5 className="mb-0 text-capitalize">
+                <h5 className="mb-0 text-capitalize ">
                   {currentUser.displayName}
                 </h5>
                 <button
@@ -34,13 +34,13 @@ const Navbar = () => {
             ) : (
               <>
                 <button
-                  className="ms-2 btn btn-outline-light"
+                  className="ms-2 btn btn-outline-dark"
                   onClick={() => navigate('/login')}
                 >
                   Login
                 </button>
                 <button
-                  className="ms-2 btn btn-outline-light"
+                  className="ms-2 btn btn-outline-dark"
                   onClick={() => navigate('/register')}
                 >
                   Register

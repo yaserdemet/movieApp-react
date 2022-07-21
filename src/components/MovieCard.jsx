@@ -9,8 +9,11 @@ const defaultImage =
   'https://images.unsplash.com/photo-1581905764498-f1b60bae941a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=700&q=80';
 
 const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
+//! bu parametreler main.jsx'de çağırılıyor.
   const { currentUser } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  // ! bu function imdb puanlarına göre class veriyor. Conditional Rendering
   const setVoteClass = (vote) => {
     if (vote > 8) {
       return 'green';
@@ -22,21 +25,24 @@ const MovieCard = ({ poster_path, title, overview, vote_average, id }) => {
   };
   return (
     <div
-      className="movie"
+      className="movie bg-dark "
       onClick={() => {
-        navigate('/details/' + id);
+        navigate('/details/' + id, {state : setVoteClass} );
+  // ! dive click oldugunda details sayfasina gidiyor. id yi useParams ile aliyoruz.
         !currentUser && toastWarnNotify('Please log in to see detail');
       }}
     >
       <img
         loading="lazy"
         src={poster_path ? IMG_API + poster_path : defaultImage}
-        alt="movie-card"
+        // ! burada poster fotoğrafının yoksa default fotoğrafını gösteriyor.
+       alt="movie-card"
       />
-      <div className="d-flex align-items-baseline justify-content-between p-1 text-white">
+      <div className="d-flex align-items-baseline  bg-dark justify-content-between p-1 text-white">
         <h5>{title}</h5>
         {currentUser && (
           <span className={`tag ${setVoteClass(vote_average)}`}>
+          {/* //! burada tag classına extra olarak conditional render ile functiona göre class veriyoruz. */}
             {vote_average}
           </span>
         )}

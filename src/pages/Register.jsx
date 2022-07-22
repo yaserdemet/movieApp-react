@@ -14,6 +14,8 @@ const Register = () => {
     const displayName = `${firstName} ${lastName}`;
     console.log(firstName, lastName);
     createUser(email, password, navigate, displayName);
+
+    //! burada navigate ile home gönderebilirdik. Fakat hatalı bir işlemde yine gönderecek. Bunun için firebase deki functionun try kısmında kullandık. Buradanda parametre ile gönderdik. Hookları componentlerin  içinde kullanabiliriz. Burası bir fonksiyon. Bu sebeple functiona parametre olarak gönderdik.
   };
 
   return (

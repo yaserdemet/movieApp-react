@@ -36,7 +36,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 export const createUser = async (email, password, navigate, displayName) => {
-  //? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu
+  //? yeni bir kullanıcı oluşturmak için kullanılan firebase metodu registerdan parametre olarak geliyor.
   try {
     let userCredential = await createUserWithEmailAndPassword(
       auth,

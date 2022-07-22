@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { forgotPassword, signIn, signUpProvider } from '../auth/firebase.js';
 import { useNavigate } from 'react-router-dom';
+import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
   const [email, setEmail] = useState();
@@ -63,7 +64,7 @@ const Login = () => {
           className="btn btn-primary form-control"
           onClick={handleProviderLogin}
         >
-          Continue with Google
+          Continue with Google <FcGoogle size={ 30 } />
         </button>
       </div>
     </div>

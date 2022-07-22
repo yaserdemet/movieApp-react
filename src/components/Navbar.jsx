@@ -3,6 +3,9 @@ import { useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { logOut } from '../auth/firebase';
 import { AuthContext } from '../context/AuthContext';
+import { BiCameraMovie } from 'react-icons/bi';
+import { FiLogOut } from 'react-icons/fi';
+
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -16,7 +19,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid">
           <Link to="/" className="navbar-brand text-white">
-            <h4 className='text-dark'>React Movie App</h4>
+            <h4 className='text-dark'> <BiCameraMovie/> React Movie App  </h4>
           </Link>
           <div className="d-flex text-white align-items-center ">
             {currentUser ? (
@@ -28,7 +31,7 @@ const Navbar = () => {
                   className="ms-2 btn btn-outline-light"
                   onClick={() => logOut()}
                 >
-                  Logout
+                  Logout <FiLogOut />
                 </button>
               </>
             ) : (

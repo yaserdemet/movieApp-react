@@ -7,6 +7,7 @@ export const toastWarnNotify = (msg) => {
     pauseOnHover: true,
     draggable: true,
     progress: undefined,
+    
   });
 };
 export const toastSuccessNotify = (msg) => {

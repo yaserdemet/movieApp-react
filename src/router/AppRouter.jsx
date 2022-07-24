@@ -17,6 +17,8 @@ const AppRouter = () => {
   const { currentUser } = useContext(AuthContext);
   function PrivateRouter() {
     return currentUser ? <Outlet /> : <Navigate to="/login" replace />;
+    
+    // ? burada bir kimlik dogrulaması yaptık. eğer user varsa outlet childı cağırır yoksa, login sayfasına gidecek.
   }
   return (
     <BrowserRouter>

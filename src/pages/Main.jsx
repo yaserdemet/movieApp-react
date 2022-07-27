@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import axios from "axios";
 import { useEffect } from "react";
 import MovieCard from "../components/MovieCard";
@@ -15,7 +15,12 @@ const Main = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const { currentUser } = useContext(AuthContext);
 
+
+  const myRef = useRef();
+
+
   useEffect(() => {
+    myRef.current.focus();
     getMovies(FEATURED_API);
   }, []);
 
@@ -46,6 +51,7 @@ const Main = () => {
     <>
       <form className="search" onSubmit={handleSubmit}>
         <input
+          ref={myRef}
           type="search"
           className="search-input "
           placeholder="Search a movie..."

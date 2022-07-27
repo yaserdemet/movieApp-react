@@ -1,15 +1,15 @@
-<p>Clarusway<img align="right"
-  src="https://secure.meetupstatic.com/photos/event/3/1/b/9/600_488352729.jpeg"  width="15px"></p>
-
-# Project-005 : Movie App (RC-05)
-
 ## Description
+
+![Animation](https://user-images.githubusercontent.com/99739515/180889461-0cde55b2-d465-47e8-af8a-21ac3291c0be.gif)
+
+[📍click here to see page](https://movie-app-react-68y1ey1wk-yaserdemet.vercel.app
+)
 
 Project aims to create a Movie App.
 
 ## Problem Statement
 
-- We are adding a new project to our portfolios. So you and your colleagues have started to work on the project.
+- Have multiple pages, and visiter should not visit all page without registeration. After registeration redirect them to relevant pages.
 
 ## Project Skeleton
 
@@ -44,27 +44,26 @@ SOLUTION
 └── yarn.lock
 ```
 
-![Project 005 Snapshot](movie-app_structure.png)
 
-## Expected Outcome
-
-![Project 005 Snapshot](movie-app.gif)
-
-## Objective
-
-Build a Movie App using ReactJS.
 
 ### At the end of the project, following topics are to be covered;
 
-- HTML
+📌 Props and State Logic
 
-- CSS
+📌 Global State Management ( Context Api )
 
-- JS
+📌 Firebase Authentication
 
-- ReactJS
+📌 React Router Pages
 
-### At the end of the project, students will be able to;
+📌 3rd Part Libraries ( Toastify, Axios )
+
+📌 Crypto apiKeys in .env files
+
+📌 Deployment with Vercel and Netlify
+
+
+### At the end of the project, i will be able to;
 
 - improve coding skills within HTML & CSS & JS & ReactJS.
 
@@ -178,11 +177,3 @@ signOut(auth)
 - Step 4 : Signup `https://www.themoviedb.org/documentation/api` and get API key for getting data from `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`, for searching movies `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=` and for movie details `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`.
 
 - Step 5: You can use css frameworks like Bootstrap, Semantic UI, Material UI.
-
-- Step 6: Add project gif to your project and README.md file.
-
-## Notes
-
-- You can add additional functionalities to your app.
-
-**<p align="center">&#9786; Happy Coding &#9997;</p>**

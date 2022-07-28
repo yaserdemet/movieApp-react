@@ -71,7 +71,7 @@ export const signIn = async (email, password, navigate) => {
     // sessionStorage.setItem('user', JSON.stringify(userCredential.user));
     console.log(userCredential);
   } catch (err) {
-    toastErrorNotify(err.message);
+    // toastErrorNotify(err.message);
     console.log(err);
   }
 };
@@ -123,8 +123,9 @@ export const forgotPassword = (email) => {
       // alert("Please check your mail box!");
     })
     .catch((err) => {
-      toastErrorNotify(err.message);
+      // toastErrorNotify(err.message);
       // alert(err.message);
       // ..
+      console.log("daw");
     });
 };

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { forgotPassword, signIn, signUpProvider } from '../auth/firebase.js';
 import { useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
+import Module from '../components/Module.jsx';
 
 const Login = () => {
   const [email, setEmail] = useState();
@@ -34,7 +35,7 @@ const Login = () => {
               className="form-control"
               id="email"
               placeholder="Enter your email adress.."
-              required
+            
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -47,7 +48,7 @@ const Login = () => {
               className="form-control"
               id="password"
               placeholder="Enter your password.."
-              required
+            
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
@@ -58,8 +59,13 @@ const Login = () => {
             type="submit"
             className="btn btn-primary form-control"
             value="Login"
+            data-bs-target = "#deneme"
+            data-bs-toggle="modal"
+           
+           
           />
         </form>
+      <Module />
         <button
           className="btn btn-primary form-control"
           onClick={handleProviderLogin}

@@ -52,6 +52,8 @@ SOLUTION
 
 📌 Global State Management ( Context Api )
 
+📌 Conditional Rendering
+
 📌 Firebase Authentication
 
 📌 React Router Pages

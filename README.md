@@ -60,6 +60,8 @@ SOLUTION
 
 📌 3rd Part Libraries ( Toastify, Axios )
 
+📌 Helmet for SEO optimization 
+
 📌 Crypto apiKeys in .env files
 
 📌 Deployment with Vercel and Netlify
@@ -81,6 +83,20 @@ SOLUTION
 
 - Step 3 : Use `https://firebase.google.com/docs/auth/web/start` and create `Authentication` operations.
   - Add the Firebase Authentication JS codes in your `firebase.js` file and initialize Firebase Authentication:
+  
+- For SEO optimization i have add Helmet, to use helmet
+
+```
+yarn add helmet-react 
+
+then in your component add title and meta tag
+
+      <Helmet>
+        <title>Login Page</title>
+        <meta name="description" content="login page" />
+      </Helmet>
+      
+ ```
 
 ```jsx
 import { initializeApp } from 'firebase/app';

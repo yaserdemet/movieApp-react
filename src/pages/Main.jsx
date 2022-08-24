@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import MovieCard from "../components/MovieCard";
 import { AuthContext } from "../context/AuthContext";
 import { toastWarnNotify } from "../helpers/ToastNotify";
+import {Helmet} from "react-helmet"
 
 const API_KEY = process.env.REACT_APP_TMDB_KEY;
 const FEATURED_API = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}`;
@@ -49,6 +50,11 @@ const Main = () => {
   };
   return (
     <>
+
+<Helmet>
+        <title>Main Page</title>
+        <meta name="description" content="main page films" />
+      </Helmet>
       <form className="search" onSubmit={handleSubmit}>
         <input
           ref={myRef}

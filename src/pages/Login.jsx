@@ -3,6 +3,7 @@ import { forgotPassword, signIn, signUpProvider } from '../auth/firebase.js';
 import { useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import Module from '../components/Module.jsx';
+import {Helmet} from "react-helmet"
 
 const Login = () => {
   const [email, setEmail] = useState();
@@ -19,7 +20,15 @@ const Login = () => {
   };
 
   return (
+
     <div className="d-flex justify-content-center">
+
+      <Helmet>
+        <title>Login Page</title>
+        <meta name="description" content="login page" />
+      </Helmet>
+
+
       <div className="form-image d-none d-md-block ">
         <img src={'https://picsum.photos/800/800'} alt="sample-movie" />
       </div>

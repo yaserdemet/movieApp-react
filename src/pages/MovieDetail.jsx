@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import VideoSection from "../components/VideoSection";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
+import { Helmet } from "react-helmet";
 
 const MovieDetail = () => {
   // const { setVoteClass } = useParams();
@@ -48,6 +49,10 @@ const MovieDetail = () => {
 
   return (
     <div className="container py-5">
+      <Helmet>
+        <title>Movie Details</title>
+        <meta name="description" content="movie details" />
+      </Helmet>
       <h1 className="text-center">{title}</h1>
       {videoKey && <VideoSection videoKey={videoKey} />}
       {/* //* videosectiondan videoları çekiyourz burada ise video keyi prop olarak gönderiyoruz. */}
@@ -71,9 +76,7 @@ const MovieDetail = () => {
                 {"Release Date : " + release_date}
               </li>
               <li className="list-group-item">
-                <span >
-                  {"Rate : " + vote_average}
-                </span>
+                <span>{"Rate : " + vote_average}</span>
               </li>
               <li className="list-group-item">
                 {"Total Vote : " + vote_count}

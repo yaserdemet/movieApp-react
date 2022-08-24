@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { createUser } from '../auth/firebase';
 import { useNavigate } from 'react-router-dom';
-
+import {Helmet}  from "react-helmet";
 const Register = () => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
@@ -20,6 +20,11 @@ const Register = () => {
 
   return (
     <div className="d-flex justify-content-center">
+
+<Helmet>
+        <title>Register Page</title>
+        <meta name="description" content="register page" />
+      </Helmet>
       <div className="form-image d-none d-md-block ">
         <img src={'https://picsum.photos/800/800'} alt="sample-movie" />
       </div>
